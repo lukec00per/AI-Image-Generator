@@ -1,7 +1,7 @@
-import './App.css';
-import ModalPopup from './ModalPopup';
-import { useState } from 'react';
-import axios from 'axios';
+import "./App.css";
+import ModalPopup from "./ModalPopup";
+import { useState } from "react";
+import axios from "axios";
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
   const [image, setImage] = useState('');
   const [savedImages, setSavedImages] = useState(items)
 
-  const baseURL = 'http://localhost:5500'
+  const baseURL = "http://localhost:5500"
 
   const handleGenerate = async () => {
     setPopup(true)
@@ -38,7 +38,7 @@ function App() {
         <input type="text" placeholder="Type descriptive prompt"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)} />
-        <button className='generate-btn' onClick={handleGenerate}>Genarate</button>
+        <button className="generate-btn" onClick={handleGenerate}>Genarate</button>
       </div>
       <h4>Recently saved Images</h4>
       <div className="imageGallery">
