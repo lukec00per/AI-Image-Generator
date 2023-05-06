@@ -5,14 +5,14 @@ import axios from "axios";
 
 function App() {
 
-  const items = JSON.parse(localStorage.getItem("generatedImages") || '[]');
+  const items = JSON.parse(localStorage.getItem("generatedImages") || "[]");
 
   const [popup, setPopup] = useState(false);
-  const [prompt, setPrompt] = useState('');
-  const [image, setImage] = useState('');
-  const [savedImages, setSavedImages] = useState(items)
+  const [prompt, setPrompt] = useState("");
+  const [image, setImage] = useState("");
+  const [savedImages, setSavedImages] = useState(items);
 
-  const baseURL = "http://localhost:5500"
+  const baseURL = "http://localhost:5500";
 
   const handleGenerate = async () => {
     setPopup(true)
@@ -27,7 +27,7 @@ function App() {
     setSavedImages([...savedImages, {imageLink: data}]);
   }
   const handleSave = () => {
-    localStorage.setItem('generatedImages', JSON.stringify(savedImages))
+    localStorage.setItem("generatedImages", JSON.stringify(savedImages))
   }
 
   return (
@@ -38,7 +38,7 @@ function App() {
         <input type="text" placeholder="Type descriptive prompt"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)} />
-        <button className="generate-btn" onClick={handleGenerate}>Genarate</button>
+        <button className="generate-btn" onClick={handleGenerate}>Generate</button>
       </div>
       <h4>Recently saved Images</h4>
       <div className="imageGallery">
