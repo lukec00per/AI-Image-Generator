@@ -10,15 +10,15 @@ function App() {
   const [popup, setPopup] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState("");
-  const [savedImages, setSavedImages] = useState(items);
+  const [savedImages, setSavedImages] = useState(items)
 
-  const baseURL = "http://localhost:5500";
+  const baseURL = "http://localhost:5500"
 
   const handleGenerate = async () => {
     setPopup(true)
     const { data } = await axios.post(`${baseURL}/generate`, { prompt }, {
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       }
     })
 

@@ -15,10 +15,6 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
-
 app.post("/generate", async (req, res) => {
   console.log(API_KEY);
   const prompt = req.body.prompt;
@@ -35,14 +31,6 @@ app.post("/generate", async (req, res) => {
     res.send(err.message);
   }
 });
-
-// app.post('/users', (req, res) => {
-//     const user = {
-//       userName: req.body.userName,
-//       password: req.body.password
-//     }
-//     res.send(user)
-//   })
 
 app.listen(5500, () => {
   console.log("server started");
